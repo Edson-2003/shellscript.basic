@@ -1,0 +1,2 @@
+# shellscript.basic
+learning shellscript
