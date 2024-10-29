@@ -1,10 +1,12 @@
-#!bin/bash
+#!/bin/bash
 # let's go there !
 
-echo "hello word"
+
+
+
+echo "content of this directory"
 ls
 
-echo "verification sttatus of git" 
 git status
 
 
