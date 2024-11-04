@@ -1,4 +1,6 @@
 #!/bin/bash
 
-OUTPUT="$(ls -1)"
-echo "${OUTPUT}"
+for OUTPUT in "$(ls -1)"
+do
+  echo $OUTPUT
+done

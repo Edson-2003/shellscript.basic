@@ -1,0 +1,12 @@
+#! /bin/bash
+acao=$(dialog --stdout\
+      --menu "aplicativo"\
+      0 0 0\
+      criar "criar" \
+      remove "remove")
+
+clear
+echo $acao
+
+
+
