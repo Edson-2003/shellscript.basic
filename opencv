@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ $UID -ne 0 ]; then
+    # Se for diferente de 0, imprime mensagem de erro.
+    echo "Requer privilégio de root."
+
+    # Finaliza o script
+    exit 1
+fi
+
+apt-get install build-essentials binutils
 apt install -y g++ make cmake wget unzip libopencv-dev libgtk-3-dev libpng++-dev libpng16-16 libpng-dev
 
 wget -O opencv.zip https://github.com/opencv/archive/master.zip

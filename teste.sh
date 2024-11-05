@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for OUTPUT in "$(ls -1)"
+for i in $(ls)
 do
-  echo $OUTPUT
+ if(()) 
 done

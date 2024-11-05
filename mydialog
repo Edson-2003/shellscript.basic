@@ -2,11 +2,14 @@
 acao=$(dialog --stdout\
       --menu "aplicativo"\
       0 0 0\
-      criar "criar" \
-      remove "remove")
-
+      debian "criar pendrive com versao mais recente do debian" \
+      ubuntu "criar pendrive com versao mais recente do ubuntu")
 clear
+dispositivo=$(dialog --stdout --inputbox "digite o caminho do pendrive" 0 0)
+clear
+
 echo $acao
+echo $dispositivo
 
 
 
