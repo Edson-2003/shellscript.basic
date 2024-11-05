@@ -13,8 +13,8 @@ apt install -y g++ make cmake wget unzip libopencv-dev libgtk-3-dev libpng++-dev
 
 wget -O opencv.zip https://github.com/opencv/archive/master.zip
 unzip opencv.zip
-mv opencv-master opencv
+mv opencv-master opencv_lib
 mkdir -p build && cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE CMAKE_INSTALL_PREFIX=/usr/local WITH_CUDA=ON ENABLE_FAST_MATH=1 CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 BUILD_EXEMPLES=ON ../opencv
+cmake -D CMAKE_BUILD_TYPE=RELEASE CMAKE_INSTALL_PREFIX=/usr/local WITH_CUDA=ON ENABLE_FAST_MATH=1 CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 BUILD_EXEMPLES=ON
 make
 make install

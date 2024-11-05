@@ -2,14 +2,24 @@
 acao=$(dialog --stdout\
       --menu "aplicativo"\
       0 0 0\
-      debian "criar pendrive com versao mais recente do debian" \
-      ubuntu "criar pendrive com versao mais recente do ubuntu")
+      1 "criar pendrive com versao mais recente do debian" \
+      2 "criar pendrive com versao mais recente do ubuntu")
 clear
-dispositivo=$(dialog --stdout --inputbox "digite o caminho do pendrive" 0 0)
-clear
-
 echo $acao
-echo $dispositivo
+#clear
 
 
+case "$acao" in 
+1)
+  URL='https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.7.0-amd64-netinst.iso';;
+2)
+  URL='https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true';;
+esac
+  wget --progress=dot "$URL" -O /tmp/arq.iso 2>&1|\
+  grep "%" |\
+  sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" | dialog --gauge "Download Test" 10 100
+clear
 
+dispositivo=$(dialog --stdout --inputbox "digite o caminho do pendrive" 0 0)
+
+#echo $dispositivo
