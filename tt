@@ -1,7 +1,23 @@
 #!/bin/bash
 
+#! /bin/bash
+
+
+
+acao=$(dialog --stdout\
+      --menu "aplicativo"\
+      0 0 0\
+      1 "criar pendrive com versao mais recente do debian" \
+      2 "criar pendrive com versao mais recente do ubuntu")
+clear
+echo $acao
+#clear
+
+if [ $acao == 1 ]; then
+
+
 URL=$1
 wget --progress=dot "$URL" 2>&1 |\
 grep "%" |\
 sed -u -e "s,\.,,g" | awk '{print $2}' | sed -u -e "s,\%,,g" | dialog --gauge "Download Test" 10 100
-
+fi

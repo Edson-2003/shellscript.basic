@@ -1,12 +1,15 @@
 #! /bin/bash
+
+
+
+
+
 acao=$(dialog --stdout\
       --menu "aplicativo"\
       0 0 0\
       1 "criar pendrive com versao mais recente do debian" \
       2 "criar pendrive com versao mais recente do ubuntu")
 clear
-echo $acao
-#clear
 
 
 case "$acao" in 
@@ -21,5 +24,14 @@ esac
 clear
 
 dispositivo=$(dialog --stdout --inputbox "digite o caminho do pendrive" 0 0)
+
+
+#$(umount $dispositivo)
+#$(mkfs.exfat -I $dispositivo)
+
+#$(apt-get install pv)
+#$(dd if=/tmp/arq.iso |pv| dd of=$dispositivo | dialog --gauge "download" 10 100)
+clear
+
 
 #echo $dispositivo
